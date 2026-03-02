@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JGC INTEGNANCE ナビ子 | 製造現場の「わからない」をナビゲート</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary-blue: #004098;
+            --accent-blue: #0072bc;
+            --gradient-start: #0056b3;
+            --gradient-end: #002a66;
+            --light-bg: #f5f8fa;
+            --jgc-gray: #595757;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+        }
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .bg-jgc-gradient {
+            background: linear-gradient(135deg, #f8fbff 0%, #e6f0fa 100%);
+        }
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link:hover { color: var(--accent-blue); }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chat-shadow { 
+            box-shadow: 0 20px 40px -10px rgba(0, 64, 152, 0.15); 
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .feature-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .feature-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .badge-before {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+        }
+        .badge-after {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased leading-relaxed">
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100/80 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="font-black text-2xl tracking-tighter text-[var(--primary-blue)] flex items-center gap-2 group cursor-pointer">
+<span class="text-3xl tracking-tight group-hover:opacity-90 transition-opacity">JGC INTEGNANCE</span>
+<span class="text-xl font-thin text-slate-300 mx-1">|</span>
+<span class="text-2xl font-bold text-[var(--accent-blue)]">Naviko</span>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-10">
+<nav class="flex gap-8 text-base font-bold text-slate-600">
+<a class="nav-link transition-colors" href="#problem">課題解決</a>
+<a class="nav-link transition-colors" href="#service">サービス概要</a>
+<a class="nav-link transition-colors" href="#features">特長</a>
+<a class="nav-link transition-colors" href="#cases">事例</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="border border-[var(--primary-blue)] text-[var(--primary-blue)] px-6 py-2.5 rounded-full text-base font-bold hover:bg-blue-50 transition-colors" href="#">資料ダウンロード</a>
+<a class="bg-[var(--primary-blue)] text-white px-6 py-2.5 rounded-full text-base font-bold hover:bg-blue-800 transition-colors shadow-lg shadow-blue-200 hover:shadow-blue-300" href="#">お問い合わせ</a>
+</div>
+</div>
+</div>
+</header>
+<section class="relative overflow-hidden pt-20 pb-32 bg-jgc-gradient">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-16 items-center">
+<div class="relative z-10">
+<div class="inline-block px-4 py-1.5 rounded-full bg-blue-100/80 text-[var(--primary-blue)] text-base font-bold mb-8 border border-blue-200">AI Knowledge Management Service</div>
+<h1 class="text-5xl lg:text-[4rem] font-black leading-[1.1] mb-8 text-[var(--primary-blue)] tracking-tight">
+                製造現場の<br/>
+<span class="text-gradient">「わからない」</span>を<br/>ナビゲート
+            </h1>
+<p class="text-2xl text-slate-600 mb-12 leading-relaxed max-w-xl font-medium">
+                点在する図面、手順書、過去のトラブル対応。Navikoはバラバラな情報を繋ぎ合わせ、ベテランのノウハウをAI化。<br/>現場の誰もが最適な答えに最短で辿り着ける環境を実現します。
+            </p>
+<div class="flex flex-wrap gap-5">
+<button class="px-8 py-4 bg-[var(--primary-blue)] text-white font-bold text-xl rounded-full shadow-lg shadow-blue-500/30 hover:shadow-xl hover:-translate-y-0.5 transition-all">無料で相談・デモ依頼</button>
+<button class="px-8 py-4 bg-white border border-slate-200 text-slate-700 font-bold text-xl rounded-full hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">サービス紹介資料(PDF)</button>
+</div>
+</div>
+<div class="relative">
+<div class="bg-white/80 backdrop-blur-xl rounded-[2rem] chat-shadow p-8 relative z-10 border border-white/60">
+<div class="flex items-center gap-4 mb-8 pb-6 border-b border-slate-100">
+<div class="w-12 h-12 bg-gradient-to-br from-[var(--primary-blue)] to-[var(--accent-blue)] rounded-2xl flex items-center justify-center text-white shadow-md">
+<span class="material-symbols-outlined text-2xl">smart_toy</span>
+</div>
+<div>
+<div class="font-bold text-lg text-slate-800">Naviko AI Assistant</div>
+<div class="text-sm text-green-600 font-semibold flex items-center gap-1.5 mt-0.5">
+<span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></span> Online
+                        </div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex justify-end">
+<div class="bg-white border border-slate-100 shadow-sm p-5 rounded-2xl rounded-tr-sm max-w-[85%] text-lg leading-relaxed text-slate-700 font-medium">
+                            回転機の軸受異常について、過去の補修履歴と推奨される点検手順を教えてください。
+                        </div>
+</div>
+<div class="flex justify-start items-start gap-3">
+<div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0 border border-blue-100">
+<span class="material-symbols-outlined text-[var(--primary-blue)] text-2xl">face</span>
+</div>
+<div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl rounded-tl-sm max-w-[90%] text-lg text-slate-800 shadow-sm border border-blue-100/50">
+<p class="mb-4 font-medium">対象の回転機（P-101A）に関連する過去3年間の履歴から、以下の情報が見つかりました：</p>
+<ul class="list-disc pl-6 space-y-3 mb-5 text-slate-600">
+<li><span class="font-bold text-slate-800">2022年8月</span>：振動値上昇によるベアリング交換実施</li>
+<li><span class="font-bold text-slate-800">推奨点検</span>：振動分析（ISO 10816準拠）</li>
+</ul>
+<div class="flex items-center gap-4 p-4 bg-white rounded-xl border border-blue-100 hover:border-blue-300 transition-colors cursor-pointer group">
+<div class="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
+<span class="material-symbols-outlined text-blue-600 text-xl">description</span>
+</div>
+<span class="text-blue-600 text-base font-bold group-hover:underline">関連資料：回転機メンテナンスマニュアル_ver2.pdf</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+<div class="absolute -bottom-12 -left-12 w-64 h-64 bg-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+<div class="absolute -top-10 -right-10 opacity-10 pointer-events-none z-0">
+<img alt="Background Element" class="w-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK0F-imPlEuRn7GCf4EYvv2kxpgVHQKWDAnuBNInlOrJZolobfdR4LPGI7gfkjm6t7u8uS-QVuLGMqOjtfpHUpan9p5XJLcgxJkO1-7tFXwGEG0AbNJwQsq8UWAX8KT79j9blRyhcCfPvirE_O7nO8uwAKuR5MCXk9sWyjHrbh4Hx-3Moh2_iPNvuaBtqLPFU-h_sQy-aE-XoQKKrBkPXf7gspvl9EWr9ACqZ0NRqkt5hl65EMA8PCD1DHw_Il960EN2KMqCfkPEYz"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-white relative" id="problem">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-bold mb-6 text-slate-900 tracking-tight">散在するデータを価値あるナレッジへ</h2>
+<p class="text-2xl text-slate-500 font-medium">ナビ子が現場の「情報の壁」を打ち破ります</p>
+</div>
+<div class="bg-[var(--light-bg)] p-12 lg:p-16 rounded-[2.5rem] relative overflow-hidden">
+<div class="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="text-center space-y-6 w-full md:w-1/3">
+<div class="flex justify-center gap-4">
+<div class="p-4 bg-white rounded-2xl shadow-md border border-slate-100 w-24 aspect-square flex flex-col items-center justify-center gap-2">
+<span class="material-symbols-outlined text-blue-400 text-3xl">tactic</span>
+<p class="text-sm font-bold text-slate-600">図面</p>
+</div>
+<div class="p-4 bg-white rounded-2xl shadow-md border border-slate-100 w-24 aspect-square flex flex-col items-center justify-center gap-2">
+<span class="material-symbols-outlined text-blue-400 text-3xl">fact_check</span>
+<p class="text-sm font-bold text-slate-600">点検表</p>
+</div>
+<div class="p-4 bg-white rounded-2xl shadow-md border border-slate-100 w-24 aspect-square flex flex-col items-center justify-center gap-2">
+<span class="material-symbols-outlined text-blue-400 text-3xl">history_edu</span>
+<p class="text-sm font-bold text-slate-600">日報</p>
+</div>
+</div>
+<div class="font-bold text-slate-400 tracking-wider text-base">バラバラなデータ</div>
+</div>
+<div class="flex flex-col items-center transform md:scale-125">
+<div class="w-20 h-20 bg-gradient-to-r from-[var(--primary-blue)] to-[var(--accent-blue)] rounded-full flex items-center justify-center text-white mb-3 shadow-lg shadow-blue-200 ring-4 ring-white">
+<span class="material-symbols-outlined text-4xl">keyboard_double_arrow_right</span>
+</div>
+<div class="font-black text-xl text-[var(--primary-blue)] tracking-tight">Naviko AI</div>
+</div>
+<div class="grid grid-cols-1 gap-5 w-full md:w-1/3">
+<div class="bg-white p-6 rounded-2xl border-l-[6px] border-[var(--accent-blue)] shadow-md hover:shadow-lg transition-shadow flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-blue-600 text-2xl">engineering</span>
+</div>
+<span class="font-bold text-xl text-slate-800">工事計画の省力化</span>
+</div>
+<div class="bg-white p-6 rounded-2xl border-l-[6px] border-[var(--accent-blue)] shadow-md hover:shadow-lg transition-shadow flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-blue-600 text-2xl">box</span>
+</div>
+<span class="font-bold text-xl text-slate-800">トラブル対応の標準化</span>
+</div>
+<div class="bg-white p-6 rounded-2xl border-l-[6px] border-[var(--accent-blue)] shadow-md hover:shadow-lg transition-shadow flex items-center gap-5">
+<div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-blue-600 text-2xl">search_check</span>
+</div>
+<span class="font-bold text-xl text-slate-800">根本原因分析の迅速化</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-primary-gradient text-white relative overflow-hidden" id="service">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-30"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-20 items-center relative z-10">
+<div>
+<div class="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white text-sm font-bold mb-6 border border-white/20">Our Strength</div>
+<h2 class="text-4xl lg:text-5xl font-bold mb-10 leading-tight">JGCグループの知見を結集した<br/>共創型メンテナンスパートナー</h2>
+<div class="space-y-12">
+<div class="flex gap-8 group">
+<div class="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-white/10 group-hover:bg-white/20 transition-colors shadow-lg">
+<span class="material-symbols-outlined text-4xl text-white">psychology</span>
+</div>
+<div>
+<h4 class="font-bold text-2xl mb-4">暗黙知のデジタル化</h4>
+<p class="text-blue-50 text-xl leading-relaxed opacity-95">ベテランが持つ「勘」や「コツ」を、AIが対話形式で引き出し、構造化されたナレッジとして保存します。</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-white/10 group-hover:bg-white/20 transition-colors shadow-lg">
+<span class="material-symbols-outlined text-4xl text-white">chat_bubble</span>
+</div>
+<div>
+<h4 class="font-bold text-2xl mb-4">現場レベルの即答性</h4>
+<p class="text-blue-50 text-xl leading-relaxed opacity-95">膨大な技術マニュアルから必要なページを特定。図面や表も解析し、現場で今すぐ使える形で回答を提示します。</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-white/10 group-hover:bg-white/20 transition-colors shadow-lg">
+<span class="material-symbols-outlined text-4xl text-white">hub</span>
+</div>
+<div>
+<h4 class="font-bold text-2xl mb-4">既存CMMSとの親和性</h4>
+<p class="text-blue-50 text-xl leading-relaxed opacity-95">既存の保全管理システム（CMMS）と連携。蓄積された実績データをNavikoが知能化し、付加価値を高めます。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-[2.5rem] opacity-20 blur-lg"></div>
+<div class="bg-white/10 p-2 rounded-[2.5rem] border border-white/20 shadow-2xl backdrop-blur-sm relative z-10">
+<img alt="Naviko Visualization" class="w-full rounded-[2rem] shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK0F-imPlEuRn7GCf4EYvv2kxpgVHQKWDAnuBNInlOrJZolobfdR4LPGI7gfkjm6t7u8uS-QVuLGMqOjtfpHUpan9p5XJLcgxJkO1-7tFXwGEG0AbNJwQsq8UWAX8KT79j9blRyhcCfPvirE_O7nO8uwAKuR5MCXk9sWyjHrbh4Hx-3Moh2_iPNvuaBtqLPFU-h_sQy-aE-XoQKKrBkPXf7gspvl9EWr9ACqZ0NRqkt5hl65EMA8PCD1DHw_Il960EN2KMqCfkPEYz"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-slate-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-bold mb-6 text-slate-900">多様なシーンで活躍するナビ子</h2>
+<p class="text-2xl text-slate-500 font-medium">業務の特性に合わせた8つの主要ユースケース</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+<div class="glass-card p-8 rounded-3xl feature-card-hover group">
+<div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--primary-blue)] transition-colors duration-300">
+<span class="material-symbols-outlined text-[var(--accent-blue)] text-4xl group-hover:text-white transition-colors">precision_manufacturing</span>
+</div>
+<h4 class="font-bold text-xl mb-4 text-slate-800">1. 予知保全</h4>
+<p class="text-base text-slate-600 leading-relaxed font-medium">異常の兆候を検知し、未然に防ぐための過去事例を参照。</p>
+</div>
+<div class="glass-card p-8 rounded-3xl feature-card-hover group">
+<div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--primary-blue)] transition-colors duration-300">
+<span class="material-symbols-outlined text-[var(--accent-blue)] text-4xl group-hover:text-white transition-colors">calculate</span>
+</div>
+<h4 class="font-bold text-xl mb-4 text-slate-800">2. 見積支援</h4>
+<p class="text-base text-slate-600 leading-relaxed font-medium">類似工事の実績から、精度の高い見積をスピーディーに作成。</p>
+</div>
+<div class="glass-card p-8 rounded-3xl feature-card-hover group">
+<div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--primary-blue)] transition-colors duration-300">
+<span class="material-symbols-outlined text-[var(--accent-blue)] text-4xl group-hover:text-white transition-colors">school</span>
+</div>
+<h4 class="font-bold text-xl mb-4 text-slate-800">3. 技術伝承</h4>
+<p class="text-base text-slate-600 leading-relaxed font-medium">ベテランのノウハウをAIが継承し、若手の育成をサポート。</p>
+</div>
+<div class="glass-card p-8 rounded-3xl feature-card-hover group">
+<div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--primary-blue)] transition-colors duration-300">
+<span class="material-symbols-outlined text-[var(--accent-blue)] text-4xl group-hover:text-white transition-colors">health_and_safety</span>
+</div>
+<h4 class="font-bold text-xl mb-4 text-slate-800">4. 安全管理</h4>
+<p class="text-base text-slate-600 leading-relaxed font-medium">作業に応じたヒヤリハット事例を提示し、災害を防止。</p>
+</div>
+<div class="glass-card p-8 rounded-3xl feature-card-hover group">
+<div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--primary-blue)] transition-colors duration-300">
+<span class="material-symbols-outlined text-[var(--accent-blue)] text-4xl group-hover:text-white transition-colors">settings_suggest</span>
+</div>
+<h4 class="font-bold text-xl mb-4 text-slate-800">5. 補修アドバイス</h4>
+<p class="text-base text-slate-600 leading-relaxed font-medium">不具合に対し、最適な補修方法や部品選定をナビゲート。</p>
+</div>
+<div class="glass-card p-8 rounded-3xl feature-card-hover group">
+<div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--primary-blue)] transition-colors duration-300">
+<span class="material-symbols-outlined text-[var(--accent-blue)] text-4xl group-hover:text-white transition-colors">event_note</span>
+</div>
+<h4 class="font-bold text-xl mb-4 text-slate-800">6. 工事計画</h4>
+<p class="text-base text-slate-600 leading-relaxed font-medium">複雑な工程管理やリソース配分を過去データから最適化。</p>
+</div>
+<div class="glass-card p-8 rounded-3xl feature-card-hover group">
+<div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--primary-blue)] transition-colors duration-300">
+<span class="material-symbols-outlined text-[var(--accent-blue)] text-4xl group-hover:text-white transition-colors">request_quote</span>
+</div>
+<h4 class="font-bold text-xl mb-4 text-slate-800">7. RFQ作成</h4>
+<p class="text-base text-slate-600 leading-relaxed font-medium">発注仕様書の作成を、過去実績との整合性を含め支援。</p>
+</div>
+<div class="glass-card p-8 rounded-3xl feature-card-hover group">
+<div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--primary-blue)] transition-colors duration-300">
+<span class="material-symbols-outlined text-[var(--accent-blue)] text-4xl group-hover:text-white transition-colors">analytics</span>
+</div>
+<h4 class="font-bold text-xl mb-4 text-slate-800">8. 省力化・可視化</h4>
+<p class="text-base text-slate-600 leading-relaxed font-medium">業務時間の削減効果を定量的にグラフで見える化。</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-white" id="features">
+<div class="max-w-6xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold mb-4 text-slate-900">選ばれる5つの特長</h2>
+<div class="h-1 w-20 bg-[var(--accent-blue)] mx-auto rounded-full"></div>
+</div>
+<div class="bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden">
+<div class="flex flex-wrap bg-slate-50 border-b border-slate-100">
+<button class="flex-1 min-w-[140px] px-6 py-6 text-base font-bold border-b-2 border-[var(--primary-blue)] bg-white text-[var(--primary-blue)] transition-colors">導入の容易さ</button>
+<button class="flex-1 min-w-[140px] px-6 py-6 text-base font-bold text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">エンジニア支援</button>
+<button class="flex-1 min-w-[140px] px-6 py-6 text-base font-bold text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">ラインナップ</button>
+<button class="flex-1 min-w-[140px] px-6 py-6 text-base font-bold text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">拡張性</button>
+<button class="flex-1 min-w-[140px] px-6 py-6 text-base font-bold text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">安全性</button>
+</div>
+<div class="p-10 md:p-16">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h3 class="text-3xl font-black mb-6 text-slate-800">手間をかけずにスタート</h3>
+<p class="text-xl text-slate-600 leading-loose mb-10">
+                            既存のドキュメントをアップロードするだけで、AIが自動で学習を開始。<br/>タグ付けなどの面倒な事前準備は必要ありません。
+                        </p>
+<ul class="space-y-5">
+<li class="flex items-center gap-4 text-lg text-slate-800 font-bold bg-blue-50/50 p-4 rounded-xl border border-blue-50">
+<span class="material-symbols-outlined text-green-500 text-2xl">check_circle</span> 既存のPDF/Excelをそのまま活用
+                                </li>
+<li class="flex items-center gap-4 text-lg text-slate-800 font-bold bg-blue-50/50 p-4 rounded-xl border border-blue-50">
+<span class="material-symbols-outlined text-green-500 text-2xl">check_circle</span> 最短2週間でのクイック導入
+                                </li>
+</ul>
+</div>
+<div class="rounded-2xl bg-slate-100 h-96 flex items-center justify-center overflow-hidden shadow-inner border border-slate-200">
+<img alt="Feature Image" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK0F-imPlEuRn7GCf4EYvv2kxpgVHQKWDAnuBNInlOrJZolobfdR4LPGI7gfkjm6t7u8uS-QVuLGMqOjtfpHUpan9p5XJLcgxJkO1-7tFXwGEG0AbNJwQsq8UWAX8KT79j9blRyhcCfPvirE_O7nO8uwAKuR5MCXk9sWyjHrbh4Hx-3Moh2_iPNvuaBtqLPFU-h_sQy-aE-XoQKKrBkPXf7gspvl9EWr9ACqZ0NRqkt5hl65EMA8PCD1DHw_Il960EN2KMqCfkPEYz"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-[var(--light-bg)]" id="cases">
+<div class="max-w-6xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-bold mb-6 text-slate-900">活用イメージ (Before / After)</h2>
+<p class="text-2xl text-slate-500 font-medium">Naviko導入による劇的な業務改善</p>
+</div>
+<div class="space-y-16">
+<div class="bg-white rounded-[2rem] p-12 shadow-xl border border-slate-100/60">
+<div class="text-[var(--primary-blue)] font-black text-3xl mb-12 flex items-center gap-5 pb-8 border-b border-slate-100">
+<div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl">diversity_3</span>
+</div>
+<span>ケース 01：技術伝承の効率化</span>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<div class="bg-red-50/80 p-10 rounded-3xl relative border border-red-100">
+<span class="absolute -top-4 left-8 badge-before text-white text-sm px-5 py-2 rounded-full font-bold tracking-wider">BEFORE</span>
+<p class="text-lg text-slate-800 leading-loose">
+                            ベテランの退職により、長年の経験に基づく判断基準が失われつつあった。若手は都度電話や過去の膨大な紙資料をひっくり返して調査しており、作業スピードが低下。
+                        </p>
+</div>
+<div class="bg-blue-50/80 p-10 rounded-3xl relative border border-blue-100 shadow-sm">
+<span class="absolute -top-4 left-8 badge-after text-white text-sm px-5 py-2 rounded-full font-bold tracking-wider">AFTER</span>
+<p class="text-lg text-slate-900 font-bold leading-loose">
+                            ベテランのノウハウをNavikoに学習。現場でタブレットから質問するだけで、過去の類似事例と対策が即座に提示され、若手でもベテラン同等の初動対応が可能になった。
+                        </p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-[2rem] p-12 shadow-xl border border-slate-100/60">
+<div class="text-[var(--primary-blue)] font-black text-3xl mb-12 flex items-center gap-5 pb-8 border-b border-slate-100">
+<div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl">assignment_turned_in</span>
+</div>
+<span>ケース 02：工事計画の策定スピード向上</span>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<div class="bg-red-50/80 p-10 rounded-3xl relative border border-red-100">
+<span class="absolute -top-4 left-8 badge-before text-white text-sm px-5 py-2 rounded-full font-bold tracking-wider">BEFORE</span>
+<p class="text-lg text-slate-800 leading-loose">
+                            定期修理の計画策定に、過去数年分の工事報告書を手作業で分析。必要な資材や人員の見極めに1ヶ月以上の時間を費やしていた。
+                        </p>
+</div>
+<div class="bg-blue-50/80 p-10 rounded-3xl relative border border-blue-100 shadow-sm">
+<span class="absolute -top-4 left-8 badge-after text-white text-sm px-5 py-2 rounded-full font-bold tracking-wider">AFTER</span>
+<p class="text-lg text-slate-900 font-bold leading-loose">
+                            Navikoが数秒で過去の類似工事を抽出し、標準工数と必要資材を提示。計画策定時間を70%削減し、より精緻なコスト管理が実現した。
+                        </p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-[2rem] p-12 shadow-xl border border-slate-100/60">
+<div class="text-[var(--primary-blue)] font-black text-3xl mb-12 flex items-center gap-5 pb-8 border-b border-slate-100">
+<div class="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl">construction</span>
+</div>
+<span>ケース 03：不具合発生時の復旧時間短縮</span>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<div class="bg-red-50/80 p-10 rounded-3xl relative border border-red-100">
+<span class="absolute -top-4 left-8 badge-before text-white text-sm px-5 py-2 rounded-full font-bold tracking-wider">BEFORE</span>
+<p class="text-lg text-slate-800 leading-loose">
+                            突発的な故障発生時、原因特定のためにメーカーへの問い合わせやマニュアルの検索に時間がかかり、ライン停止時間が長期化。
+                        </p>
+</div>
+<div class="bg-blue-50/80 p-10 rounded-3xl relative border border-blue-100 shadow-sm">
+<span class="absolute -top-4 left-8 badge-after text-white text-sm px-5 py-2 rounded-full font-bold tracking-wider">AFTER</span>
+<p class="text-lg text-slate-900 font-bold leading-loose">
+                            故障症状を入力するだけで、図面データと過去のトラブル履歴から最も可能性の高い原因を特定。復旧までの時間が平均35%短縮された。
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-bold mb-6 text-slate-900">導入までの流れ</h2>
+<p class="text-2xl text-slate-500 font-medium">お客様の状況に合わせた伴走型サポートを提供します</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+<div class="hidden md:block absolute top-12 left-0 right-0 h-1 bg-slate-100 z-0"></div>
+<div class="relative z-10 text-center group">
+<div class="w-24 h-24 bg-white border-4 border-blue-50 text-[var(--primary-blue)] rounded-full flex items-center justify-center mx-auto font-black text-2xl shadow-sm group-hover:border-[var(--accent-blue)] group-hover:text-[var(--accent-blue)] transition-colors duration-300">01</div>
+<div class="mt-8">
+<h5 class="font-bold text-xl mb-3">トライアル</h5>
+<p class="text-base text-slate-600 px-4 leading-relaxed font-medium">一部のデータ・部署で操作感と精度を検証（1ヶ月〜）</p>
+</div>
+</div>
+<div class="relative z-10 text-center group">
+<div class="w-24 h-24 bg-white border-4 border-blue-50 text-[var(--primary-blue)] rounded-full flex items-center justify-center mx-auto font-black text-2xl shadow-sm group-hover:border-[var(--accent-blue)] group-hover:text-[var(--accent-blue)] transition-colors duration-300">02</div>
+<div class="mt-8">
+<h5 class="font-bold text-xl mb-3">本契約</h5>
+<p class="text-base text-slate-600 px-4 leading-relaxed font-medium">評価結果に基づき、最適なプランで正式導入を決定</p>
+</div>
+</div>
+<div class="relative z-10 text-center group">
+<div class="w-24 h-24 bg-white border-4 border-blue-50 text-[var(--primary-blue)] rounded-full flex items-center justify-center mx-auto font-black text-2xl shadow-sm group-hover:border-[var(--accent-blue)] group-hover:text-[var(--accent-blue)] transition-colors duration-300">03</div>
+<div class="mt-8">
+<h5 class="font-bold text-xl mb-3">カスタマイズ</h5>
+<p class="text-base text-slate-600 px-4 leading-relaxed font-medium">貴社独自のデータ連携やプロンプトの最適化を実施</p>
+</div>
+</div>
+<div class="relative z-10 text-center group">
+<div class="w-24 h-24 bg-gradient-to-br from-[var(--primary-blue)] to-[var(--accent-blue)] text-white rounded-full flex items-center justify-center mx-auto font-black text-2xl shadow-lg ring-4 ring-blue-50">04</div>
+<div class="mt-8">
+<h5 class="font-bold text-xl mb-3 text-[var(--primary-blue)]">本稼働</h5>
+<p class="text-base text-slate-600 px-4 leading-relaxed font-medium">全社・全現場での運用開始。定着化に向けた継続サポート</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-slate-50">
+<div class="max-w-5xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold mb-4 text-slate-900">よくあるご質問</h2>
+</div>
+<div class="space-y-8">
+<details class="bg-white rounded-2xl border border-slate-200 group overflow-hidden shadow-sm">
+<summary class="p-8 text-xl font-bold cursor-pointer list-none flex justify-between items-center hover:bg-slate-50 transition-colors">
+<span>Q. どのようなファイル形式に対応していますか？</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-slate-400 text-3xl">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-lg text-slate-700 leading-loose">
+                    PDF, Word, Excel, PowerPointに対応しています。画像データ（JPG/PNG）も高性能OCR機能により、手書きの点検表なども文字として解析可能です。
+                </div>
+</details>
+<details class="bg-white rounded-2xl border border-slate-200 group overflow-hidden shadow-sm">
+<summary class="p-8 text-xl font-bold cursor-pointer list-none flex justify-between items-center hover:bg-slate-50 transition-colors">
+<span>Q. 複数部門や拠点での利用は可能ですか？</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-slate-400 text-3xl">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-lg text-slate-700 leading-loose">
+                    はい、可能です。アカウントごとの権限設定により、特定の部署のみが閲覧できるナレッジベースを作成したり、全社共通のナレッジを共有したりと、柔軟な運用が可能です。
+                </div>
+</details>
+<details class="bg-white rounded-2xl border border-slate-200 group overflow-hidden shadow-sm">
+<summary class="p-8 text-xl font-bold cursor-pointer list-none flex justify-between items-center hover:bg-slate-50 transition-colors">
+<span>Q. 使用しているAIモデルとセキュリティについて教えてください。</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-slate-400 text-3xl">expand_more</span>
+</summary>
+<div class="px-8 pb-8 pt-0 text-lg text-slate-700 leading-loose">
+                    リコー社の技術、およびGPT-4o等の最新LLMをセキュアな閉域環境で組み合わせて使用しています。お客様が投入したデータが外部の学習に使われることはなく、高いセキュリティ基準をクリアしています。
+                </div>
+</details>
+</div>
+</div>
+</section>
+<section class="py-24 bg-jgc-gradient relative overflow-hidden">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+<h2 class="text-4xl md:text-5xl font-black text-[var(--primary-blue)] mb-10 tracking-tight leading-tight">製造現場のナレッジ活用を、<br/>Navikoと共に。</h2>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="bg-[var(--primary-blue)] text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl shadow-blue-500/30 hover:bg-blue-800 hover:shadow-2xl hover:-translate-y-1 transition-all" href="#">お問い合わせ</a>
+<a class="bg-white text-[var(--primary-blue)] border border-[var(--primary-blue)] px-12 py-5 rounded-full font-bold text-xl shadow-lg hover:bg-blue-50 hover:shadow-xl hover:-translate-y-1 transition-all flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">download</span> 資料ダウンロード
+            </a>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 w-1/4 lg:w-1/5 opacity-10 pointer-events-none">
+<img alt="Footer Character" class="w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK0F-imPlEuRn7GCf4EYvv2kxpgVHQKWDAnuBNInlOrJZolobfdR4LPGI7gfkjm6t7u8uS-QVuLGMqOjtfpHUpan9p5XJLcgxJkO1-7tFXwGEG0AbNJwQsq8UWAX8KT79j9blRyhcCfPvirE_O7nO8uwAKuR5MCXk9sWyjHrbh4Hx-3Moh2_iPNvuaBtqLPFU-h_sQy-aE-XoQKKrBkPXf7gspvl9EWr9ACqZ0NRqkt5hl65EMA8PCD1DHw_Il960EN2KMqCfkPEYz"/>
+</div>
+</section>
+<footer class="bg-white border-t border-slate-200 py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+<div>
+<div class="font-black text-2xl tracking-tighter text-[var(--primary-blue)] flex items-center gap-2 mb-6">
+<span>JGC INTEGNANCE</span>
+</div>
+<p class="text-base text-slate-500 leading-relaxed max-w-sm font-medium">
+                    プラント・製造現場の資産管理・保全業務のDXを支援する、JGCグループの専門家集団。
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+<div>
+<h6 class="font-bold text-lg mb-6 text-slate-900">サービス</h6>
+<ul class="text-base space-y-4 text-slate-600 font-medium">
+<li><a class="hover:text-[var(--primary-blue)] transition-colors" href="#">Navikoについて</a></li>
+<li><a class="hover:text-[var(--primary-blue)] transition-colors" href="#">機能一覧</a></li>
+<li><a class="hover:text-[var(--primary-blue)] transition-colors" href="#">プラン・料金</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-lg mb-6 text-slate-900">会社情報</h6>
+<ul class="text-base space-y-4 text-slate-600 font-medium">
+<li><a class="hover:text-[var(--primary-blue)] transition-colors" href="#">運営会社</a></li>
+<li><a class="hover:text-[var(--primary-blue)] transition-colors" href="#">ニュース</a></li>
+<li><a class="hover:text-[var(--primary-blue)] transition-colors" href="#">導入実績</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-lg mb-6 text-slate-900">サポート</h6>
+<ul class="text-base space-y-4 text-slate-600 font-medium">
+<li><a class="hover:text-[var(--primary-blue)] transition-colors" href="#">利用規約</a></li>
+<li><a class="hover:text-[var(--primary-blue)] transition-colors" href="#">プライバシーポリシー</a></li>
+<li><a class="hover:text-[var(--primary-blue)] transition-colors" href="#">お問い合わせ</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500 font-medium">
+<div>© 2024 JGC INTEGNANCE Co., Ltd. All rights reserved.</div>
+<div class="flex gap-6">
+<a class="hover:text-[var(--primary-blue)] hover:underline transition-colors" href="#">運営会社：JGC INTEGNANCE株式会社</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
